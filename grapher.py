@@ -17,7 +17,7 @@ def main():
     args = argumentParser()
     config = ConfigParser(*args.config)
     gd = GraphDrawer(format='svg')
-    gd.add_nodes([job.asNode() for job in config.getJobs()])
+    gd.add_nodes([(job.asNode(), {"URL":job.name}) for job in config.getJobs()])
     gd.add_edges([job.asEdge() for job in config.getJobs() if job.asEdge()])
 
     gd.render(args.outfile)

@@ -10,7 +10,7 @@ class ConfigParser:
                 try:
                     config_contents = yaml.safe_load(cfile)
                 except yaml.constructor.ConstructorError as e:
-                    print "Error! %s\n skipping file..." % (e,)
+                    print("Error! %s\n skipping file..." % (e,))
                     config_contents = []
                 for entry in config_contents:
                     if 'job' in entry.keys():
@@ -28,7 +28,7 @@ class ConfigParser:
                     for entry in parse_file(arg):
                         self.__config.append(entry)
             else:
-                print "File or directory %s does not exist, skipping." % arg
+                print("File or directory %s does not exist, skipping." % arg)
 
     def getJobs(self):
         for entry in self.__config:

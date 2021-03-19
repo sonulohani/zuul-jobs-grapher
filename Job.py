@@ -49,9 +49,5 @@ vars:
         return None
 
     def asNode(self):
-        return (self.name), {'label': self.name, 
-                             'fillcolor': self.__getFillcolor(),
-                             'color': self.__getColor(),
-                             'tooltip': self.__renderTooltip(),
-                             'style': 'filled'}
+        return (self.name)
 
